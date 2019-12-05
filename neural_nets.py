@@ -14,7 +14,6 @@ def get_model():
     # define the keras model
     model = Sequential()
     model.add(Dense(21, input_dim=13, activation='relu'))
-    model.add(Dense(17, activation='relu'))
     model.add(Dense(13, activation='relu'))
     model.add(Dense(4, activation='softmax'))
 
@@ -22,7 +21,7 @@ def get_model():
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     # fit the keras model on the dataset
-    model.fit(X, y, epochs=200, batch_size=10)
+    model.fit(X, y, epochs=150, batch_size=10)
 
     return model
 
